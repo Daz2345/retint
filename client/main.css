@@ -1,0 +1,38 @@
+/* CSS declarations go here */
+.section {
+  box-shadow: 0px 3px 5px rgba(153, 153, 153, 0.349019607843137);
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.pumpkinTop {
+  border-top: 4px solid #E68321;
+}
+
+.body {
+  background-color: #F4F4F4;
+}
+h1 {
+    display: block;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.metric {
+  width:25%;
+  float:left;
+}
+
+.metricData {
+  padding-left: 60px;
+}
+
+.metrics {
+  margin: 20px 0px;
+}
+
+.metrics .metric:not(:last-child) {
+  border-right: 1px solid lightgrey;
+}

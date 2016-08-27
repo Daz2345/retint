@@ -2,13 +2,55 @@
 .section {
   box-shadow: 0px 3px 5px rgba(153, 153, 153, 0.349019607843137);
   overflow: auto;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .pumpkinTop {
   border-top: 4px solid #E68321;
 }
+.minorTitle {
+  font-size: 10px;
+  color: #999999;
+}
+.redTop {
+  border-top: 4px solid #CA0813;
+}
 
+.red {
+  color: #CA0813
+}
+.indicator {
+  float: left;
+}
+.storyIndicator {
+  left: -10px;
+}
+.grey {
+  color: grey;
+}
+.clearFloat {
+  float: clearFloat;
+}
+.green {
+  color: #149718;
+}
+.minorMetric {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.majorMetric {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 48px;
+}
+
+.greenTop {
+  border-top: 4px solid #149718;
+}
 .body {
   background-color: #F4F4F4;
 }
@@ -19,14 +61,44 @@ h1 {
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
 }
-
-.metric {
-  width:25%;
-  float:left;
+h2 {
+    display: block;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
 }
 
 .metricData {
   padding-left: 60px;
+}
+
+.categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category {
+  display: inline;
+  float:left;
+  width:auto;
+  padding:0px 20px;
+}
+
+.categories .category:not(:last-child) {
+  border-right: 1px solid lightgrey;
+}
+
+.lowerSection {
+  padding: 20px;
+}
+.categoryTitle {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 10px;
+  text-transform:uppercase;
 }
 
 .metrics {
@@ -35,4 +107,34 @@ h1 {
 
 .metrics .metric:not(:last-child) {
   border-right: 1px solid lightgrey;
+}
+
+.stories .story:not(:last-child) {
+  border-bottom: 1px solid lightgrey;
+}
+
+.story {
+  margin:0px 20px;
+  padding: 20px 40px;
+}
+.salesImpact {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  text-align: right;
+  font-size: 28px
+}
+.percentImpact {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  text-align: right;
+  font-size: 18px
+}
+.storyTitle {
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 10px;
 }

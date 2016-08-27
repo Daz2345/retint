@@ -14,11 +14,9 @@ const NavBar = () => {
                     <ul className="headerSubNav right">
                     </ul>
                     <ul className="nav right">
-                      {/*<li><Link className="" activeClassName="active" to="/help">?</Link></li>
-                      <li><Link className="" activeClassName="active" to="/calculator">Pricing Calculator</Link></li>
-                      <li><Link className="" activeClassName="active" to="/stores">Stores</Link></li>
-                      <li><Link className="" activeClassName="active" to="/campaigns">Campaigns</Link></li>
-                      <li><Link className="" activeClassName="active" to="/planner">Planner</Link></li>*/}
+                      <li><Link className="" activeClassName="active" to="/help">Help</Link></li>
+                      <li><Link className="" activeClassName="active" to="/settings">Settings</Link></li>
+                      <li><Link className="" activeClassName="active" to="/login">Sign Out</Link></li>
                     </ul>
                   </nav>
                 </div>

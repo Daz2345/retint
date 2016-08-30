@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMixin from 'react-mixin';
-import { Route, IndexRoute } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { ReactRouterSSR } from 'meteor/reactrouter:react-router-ssr';
 
 import NavBar from './components/navbar';
@@ -22,6 +22,7 @@ class App extends Component {
 }
 
 AppRoutes = (
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={TopStories}/>
       <Route path="/storydetail" component={StoryDetail}/>
@@ -30,6 +31,7 @@ AppRoutes = (
       <Route path="/settings"/>
       <Route path="/login"/>
     </Route>
+  </Router>
 );
 
 ReactRouterSSR.Run(AppRoutes);

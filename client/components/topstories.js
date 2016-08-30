@@ -49,6 +49,7 @@ class TopStories extends Component {
         this.props.contributionsData.Price,
         this.props.contributionsData.Promotion,
         this.props.contributionsData.Range,
+        this.props.contributionsData.NPD,
         this.props.contributionsData.OtherFactors]
     } else {
       data =  []
@@ -130,7 +131,7 @@ export default createContainer(() => {
   Meteor.subscribe('stories', periodID);
   Meteor.subscribe('contributions');
 
-  return {metricsData: Metrics.find({}).fetch(),
+  return {metricsData: Metrics.find({},{sort:{order:1}}).fetch(),
           storiesData: Stories.find({}, {sort:{percentImpact: 1}}).fetch(),
           contributionsData: Contributions.findOne({})};
 }, TopStories);

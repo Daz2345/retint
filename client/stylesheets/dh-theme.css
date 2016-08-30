@@ -8,7 +8,7 @@ body {
 /* ==========================================================================
   	Header/navbar styles
    ========================================================================== */
-.navbar{background:#363534; font-family:TradeGothicLTCom-BdCn20; position:relative; margin-bottom:30px;}
+.navbar{background:#363534; font-family:TradeGothicLTCom-BdCn20; position:relative;}
 
 .logo{background:transparent url('../images/logo.png') no-repeat 0 30px; margin:0 auto; display: block; height: 89px; padding-top:30px; text-indent: -4000px; width: 213px;}
 .navbar-slim .logo{background:transparent url('../images/logos/logo-sm.png') no-repeat 0 center; width:142px; height:51px;}
@@ -73,7 +73,7 @@ body .navbar button.searchButton{height:24px; width:24px; background:url("../ima
 	.navbar i{padding: 0;}
 	.navbar .nav li i:hover{color:#42a8c1;}
 	.navbar-slim .logo{padding:10px; display:inline-block; height:55px;}
-	.navbar-slim ul{margin-top:10px; margin-bottom:0;} 
+	.navbar-slim ul{margin-top:10px; margin-bottom:0;}
 	.navbar-slim .shopLogo{padding:10px; background-position:center center; height:55px;}
 	.navbar-slim .nav a{border-bottom:0;}
 	.logoMeta{display:inline-block; color:white; font-family:arial; font-size:14px; padding:10px; position:relative; top:12px;}
@@ -93,7 +93,7 @@ body .navbar button.searchButton{height:24px; width:24px; background:url("../ima
       position: absolute;
       width: 100%;
   }
-  
+
   .navbar .nav ul li {
       float: right;
       margin-left: 0;
@@ -110,14 +110,14 @@ body .navbar button.searchButton{height:24px; width:24px; background:url("../ima
   .navbar .nav a.active-trail:after{
     border-color: transparent transparent #009b74;
   }
-  .navbar .nav ul li a:hover, 
+  .navbar .nav ul li a:hover,
   .navbar .nav ul li a.active{
     border-bottom:1px white dashed;
   }
   .navbar .nav ul li a.active:after{
     content:none;
   }
-	
+
 }
 
 @media (min-width:992px){
@@ -138,7 +138,7 @@ body .navbar button.searchButton{height:24px; width:24px; background:url("../ima
 /* ==========================================================================
   	Font awesome styles
    ========================================================================== */
-.nav-bar i{font-size:20px; color:white;} 
+.nav-bar i{font-size:20px; color:white;}
 
 
 /* ==========================================================================
@@ -1221,7 +1221,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #42a8c1;
   text-decoration: none;
   background-color: #fff;
-  
+
 }
 .pagination > li:first-child > a,
 .pagination > li:first-child > span

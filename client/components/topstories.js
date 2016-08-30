@@ -11,57 +11,7 @@ import SectionHeader from './sectionHeader';
 
 import { Metrics } from '../../imports/collections/metrics';
 import { Stories } from '../../imports/collections/stories';
-
-const config = {
-  chart: {
-          height: 200,
-          type: 'bar',
-          spacingLeft: 50,
-          spacingRight: 50
-      },
-      xAxis: {
-        visible: false,
-        categories: ['Contribution']
-      },
-      yAxis: {
-        title: {
-          text: null
-        }
-      },
-      title: {
-        text: null
-      },
-      credits: {
-        enabled: false
-      },
-      legend: {
-          reversed: false
-      },
-      plotOptions: {
-          series: {
-              stacking: 'normal',
-              borderWidth: 0,
-              animation: false
-          }
-      },
-      series: [{
-          name: 'Price',
-          data: [-5],
-          // color: '#FF0000'
-      }, {
-          name: 'Promotion',
-          data: [2],
-          // color: '#FF0000'
-      }, {
-          name: 'Range',
-          data: [3],
-          // color: '#FF0000'
-      }, {
-          name: 'Other Factors',
-          data: [5],
-          // color: '#FF0000'
-      }]
-}
+import { Contributions } from '../../imports/collections/contributions';
 
 class TopStories extends Component {
 
@@ -92,34 +42,82 @@ class TopStories extends Component {
   isNegative(value){
      return value.percentImpact < 0;
   }
+  createChart() {
+
+    if (!!this.props.contributionsData) {
+      data = [
+        this.props.contributionsData.Price,
+        this.props.contributionsData.Promotion,
+        this.props.contributionsData.Range,
+        this.props.contributionsData.OtherFactors]
+    } else {
+      data =  []
+    }
+
+    config = {
+      chart: {
+              height: 200,
+              type: 'bar',
+              spacingLeft: 50,
+              spacingRight: 50
+          },
+          xAxis: {
+            visible: false,
+            categories: ['Contribution']
+          },
+          yAxis: {
+            title: {
+              text: null
+            }
+          },
+          title: {
+            text: null
+          },
+          credits: {
+            enabled: false
+          },
+          legend: {
+              reversed: false
+          },
+          plotOptions: {
+              series: {
+                  stacking: 'normal',
+                  borderWidth: 0,
+                  animation: false
+              }
+          },
+          series: data
+    }
+    return config
+  }
   render() {
-  return (
-    <div className="container">
-      <SectionHeader headerVal="Performance for My Buying Area"/>
+    return (
+      <div className="container">
+        <SectionHeader headerVal="Performance for My Buying Area"/>
         <Section topColor="section pumpkinTop">
           <div className="metrics row">
             {this.renderMetrics()}
           </div>
-          <ReactHighcharts config= {config}></ReactHighcharts>
+          <ReactHighcharts config= {this.createChart()}></ReactHighcharts>
         </Section>
         <SectionHeader headerVal="Areas to investigate in My Buying Area" storyCount={this.negativeStoriesCount()}/>
-          <Section topColor="section redTop">
-            <div className="stories">
-            {this.renderNegativeStories()}
-            </div>
-          </Section>
+        <Section topColor="section redTop">
+          <div className="stories">
+          {this.renderNegativeStories()}
+          </div>
+        </Section>
         <SectionHeader headerVal="Areas performing well in My Buying Area" storyCount={this.positiveStoriesCount()}/>
-            <Section topColor="section greenTop">
-              <div className="stories">
-              {this.renderPositiveStories()}
-              </div>
-            </Section>
+        <Section topColor="section greenTop">
+          <div className="stories">
+          {this.renderPositiveStories()}
+          </div>
+        </Section>
         <SectionHeader headerVal="What is Happening Across the Category"/>
         <Section topColor="section pumpkinTop">
         </Section>
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 
 // export default TopStories;
@@ -130,7 +128,9 @@ export default createContainer(() => {
 
   Meteor.subscribe('metrics', periodID);
   Meteor.subscribe('stories', periodID);
+  Meteor.subscribe('contributions');
 
   return {metricsData: Metrics.find({}).fetch(),
-          storiesData: Stories.find({}, {sort:{percentImpact: 1}}).fetch()};
+          storiesData: Stories.find({}, {sort:{percentImpact: 1}}).fetch(),
+          contributionsData: Contributions.findOne({})};
 }, TopStories);

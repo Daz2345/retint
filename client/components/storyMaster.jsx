@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import ReactHighcharts from 'react-highcharts';
 import FontAwesome from 'react-fontawesome';
 import numeral from 'numeral';
+import { Link } from 'react-router';
 
 import Category from './category';
 
     class StoryMaster extends Component {
 
       indicator(value) {
-        if (Number(value) < 90) {
+        if (Number(value) < 0) {
           return <FontAwesome className='red storyIndicator' name='arrow-circle-down' size='2x' />
-        } else if (Number(value) > 110) {
-          return <FontAwesome className='green storyIndicator' name='arrow-circle-up' size='2x' />
         } else {
-          return <FontAwesome className='grey storyIndicator' name='minus-circle' size='2x' />
+          return <FontAwesome className='green storyIndicator' name='arrow-circle-up' size='2x' />
         }
       }
 
@@ -78,6 +77,8 @@ import Category from './category';
                   }]
               }
 
+      const url = `/storydetail/${this.props._id}`;
+
       return (
         <div className="story" key={this.props.id}>
             <h2 className="storyTitle">{this.indicator(this.props.percentImpact)}{this.props.title}</h2>
@@ -101,6 +102,7 @@ import Category from './category';
                 </div>
               </div>
             </div>
+            <Link to={url}>More Detail >></Link>
 	    	</div>
       )
     }

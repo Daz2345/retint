@@ -22,3 +22,5 @@ reactrouter:react-router-ssr
 react-meteor-data
 shell-server
 session
+accounts-ui
+accounts-password

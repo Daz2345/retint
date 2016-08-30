@@ -21,12 +21,11 @@ class App extends Component {
     }
 }
 
-// Meteor.startup(() => {
-//   ReactDOM.render(
 AppRoutes = (
     <Route path="/" component={App}>
       <IndexRoute component={TopStories}/>
-      <Route path="/storydetail/:storyID" component={StoryDetail}/>
+      <Route path="/storydetail" component={StoryDetail}/>
+        <Route path="/storydetail/:storyID" component={StoryDetail}/>
       <Route path="/help"/>
       <Route path="/settings"/>
       <Route path="/login"/>
@@ -34,6 +33,3 @@ AppRoutes = (
 );
 
 ReactRouterSSR.Run(AppRoutes);
-
-//   , document.querySelector('.rootContainer'));
-// });

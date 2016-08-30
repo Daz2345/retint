@@ -79,6 +79,34 @@ h2 {
   padding: 0;
 }
 
+.lowerNav {
+  list-style-type: none;
+  line-height: 40px;
+  margin-top:-5px;
+}
+.lowerNavContainer {
+    margin-bottom: 20px;
+    background-color: #D9D9D9;
+    border-bottom: 1px solid #000;
+}
+.sheetSelector {
+  display: inline;
+  float:left;
+  width:auto;
+  padding:0px 20px;
+  font-family: 'Arial Bold', 'Arial';
+  font-weight: 700;
+  font-style: normal;
+  font-size: 16px;
+  color: black;
+  height: 100%;
+}
+.sheetSelector.active {
+  background-color: #F4F4F4;
+  border: 1px solid black;
+  border-bottom: none;
+}
+
 .category {
   display: inline;
   float:left;

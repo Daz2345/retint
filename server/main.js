@@ -6,15 +6,15 @@ import { Contributions } from '../imports/collections/contributions';
 Meteor.startup(() => {
   // code to run on server at startup
 
-  Meteor.publish("metrics", function(periodID){
+  Meteor.publish("metrics", function(){
     return Metrics.find({});
   });
 
-  Meteor.publish("stories", function(periodID){
+  Meteor.publish("stories", function(){
     return Stories.find({});
   });
 
-  Meteor.publish("contributions", function(periodID){
+  Meteor.publish("contributions", function(){
     return Contributions.find({});
   });
 });

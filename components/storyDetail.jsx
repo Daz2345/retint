@@ -7,8 +7,9 @@ import Section from './section';
 import StoryMaster from './storyMaster';
 import SectionHeader from './sectionHeader';
 
-import { Metrics } from '../../imports/collections/metrics';
-import { Stories } from '../../imports/collections/stories';
+import { Metrics } from '../imports/collections/metrics';
+import { Stories } from '../imports/collections/stories';
+import { Contributions } from '../imports/collections/contributions';
 
 const config = {
   chart: {
@@ -87,7 +88,11 @@ export default createContainer(() => {
 
   var periodID = 1
   // Session.get('period') || 1;
-  Meteor.subscribe('stories', periodID);
+  // Meteor.subscribe('metrics');
+  // Meteor.subscribe('stories');
+  // Meteor.subscribe('contributions');
 
-  return {storyData: Stories.find({}, {sort:{percentImpact: 1}}).fetch()};
+  return {metricsData: Metrics.find({},{sort:{order:1}}).fetch(),
+          storiesData: Stories.find({}, {sort:{percentImpact: 1}}).fetch(),
+          contributionsData: Contributions.findOne({})};
 }, StoryDetail);
